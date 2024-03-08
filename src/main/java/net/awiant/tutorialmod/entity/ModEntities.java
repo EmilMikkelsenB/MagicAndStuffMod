@@ -1,7 +1,7 @@
 package net.awiant.tutorialmod.entity;
 
 import net.awiant.tutorialmod.TutorialMod;
-import net.awiant.tutorialmod.entity.projectile.MagicBolt;
+import net.awiant.tutorialmod.entity.custom.MagicBolt;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
