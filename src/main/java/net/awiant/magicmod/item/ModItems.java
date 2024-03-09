@@ -1,6 +1,6 @@
-package net.awiant.tutorialmod.item;
-import net.awiant.tutorialmod.TutorialMod;
-import net.awiant.tutorialmod.item.custom.MagicStaffItem;
+package net.awiant.magicmod.item;
+import net.awiant.magicmod.TutorialMod;
+import net.awiant.magicmod.item.custom.MagicStaffItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraft.world.item.Item;

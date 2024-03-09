@@ -1,10 +1,10 @@
-package net.awiant.tutorialmod;
+package net.awiant.magicmod;
 
 import com.mojang.logging.LogUtils;
-import net.awiant.tutorialmod.block.ModBlocks;
-import net.awiant.tutorialmod.item.ModCreativeModTabs;
-import net.awiant.tutorialmod.item.ModItems;
-import net.awiant.tutorialmod.entity.ModEntities;
+import net.awiant.magicmod.block.ModBlocks;
+import net.awiant.magicmod.item.ModCreativeModTabs;
+import net.awiant.magicmod.item.ModItems;
+import net.awiant.magicmod.entity.ModEntities;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -21,7 +21,7 @@ import org.slf4j.Logger;
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(TutorialMod.MOD_ID)
 public class TutorialMod {
-    public static final String MOD_ID = "tutorialmod";
+    public static final String MOD_ID = "magicmod";
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public TutorialMod() {

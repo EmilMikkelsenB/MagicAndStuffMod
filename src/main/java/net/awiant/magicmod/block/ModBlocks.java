@@ -1,7 +1,7 @@
-package net.awiant.tutorialmod.block;
+package net.awiant.magicmod.block;
 
-import net.awiant.tutorialmod.TutorialMod;
-import net.awiant.tutorialmod.item.ModItems;
+import net.awiant.magicmod.TutorialMod;
+import net.awiant.magicmod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
