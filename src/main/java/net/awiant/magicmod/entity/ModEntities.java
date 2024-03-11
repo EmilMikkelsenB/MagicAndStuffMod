@@ -1,6 +1,6 @@
 package net.awiant.magicmod.entity;
 
-import net.awiant.magicmod.TutorialMod;
+import net.awiant.magicmod.MagicMod;
 import net.awiant.magicmod.entity.custom.MagicBolt;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EntityType;
@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModEntities {
     public static DeferredRegister<EntityType<?>> ENTITY_TYPES =
-            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, TutorialMod.MOD_ID);
+            DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MagicMod.MOD_ID);
 
     public static final RegistryObject<EntityType<MagicBolt>> MAGIC_BOLT = ENTITY_TYPES.register("magic_bolt",
             () -> EntityType.Builder.<MagicBolt>of((entity, world) -> new MagicBolt(entity, world, BlockPos.ZERO, Vec3.ZERO), MobCategory.MISC)
