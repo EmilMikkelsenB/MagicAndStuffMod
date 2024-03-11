@@ -44,7 +44,7 @@ public class MagicStaffItem extends Item {
         Color startingColor = new Color(100, 0, 100);
         Color endingColor = new Color(0, 100, 200);
         WorldParticleBuilder.create(LodestoneParticleRegistry.SPARKLE_PARTICLE)
-                .setScaleData(GenericParticleData.create(1f, 0).build())
+                .setScaleData(GenericParticleData.create(30f, 0).build())
                 .setTransparencyData(GenericParticleData.create(0.75f, 0.25f).build())
                 .setColorData(ColorParticleData.create(startingColor, endingColor).setCoefficient(1.4f).setEasing(Easing.BOUNCE_IN_OUT).build())
                 .setSpinData(SpinParticleData.create(0.2f, 0.4f).setSpinOffset((level.getGameTime() * 0.2f) % 6.28f).setEasing(Easing.QUARTIC_IN).build())
@@ -58,15 +58,17 @@ public class MagicStaffItem extends Item {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
         double reachDistance = 2000000.0d;
+        Vec3 pos = player.getEyePosition();
 
         // Perform ray tracing
         BlockHitResult hit = level.clip(new ClipContext(player.getEyePosition(), player.getEyePosition().add(player.getLookAngle().scale(reachDistance)), ClipContext.Block.VISUAL, ClipContext.Fluid.NONE, player));
         if (!level.isClientSide) {
-            // Calculate the look direction based on player's pitch and yaw
             if (hit.getType() == HitResult.Type.BLOCK) {
                 level.explode(null, hit.getBlockPos().getX(), hit.getBlockPos().getY(), hit.getBlockPos().getZ(), 5, Level.ExplosionInteraction.TNT);
             }
         } else { // Only on client-side (when the item is used)
+            spawnCastParticles(level,pos );
+
         }
 
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
