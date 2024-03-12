@@ -13,11 +13,11 @@ import org.joml.Matrix4f;
 import team.lodestar.lodestone.handlers.RenderHandler;
 import team.lodestar.lodestone.registry.client.LodestoneRenderTypeRegistry;
 import team.lodestar.lodestone.systems.rendering.VFXBuilders;
+
 public class MagicBolt extends Entity {
 
-    private static final ResourceLocation LIGHT_TRAIL = ResourceLocation.tryParse(("textures/vfx/concentrated_trail.png"));
+    private static final ResourceLocation LIGHT_TRAIL = new ResourceLocation("textures/vfx/concentrated_trail.png");
     private static final RenderType TRAIL_TYPE = LodestoneRenderTypeRegistry.ADDITIVE_TEXTURE.apply(LIGHT_TRAIL);
-    // Define parameters for MagicBolt entity
     private BlockPos pos1;
     private Vec3 pos2;
 
@@ -26,7 +26,7 @@ public class MagicBolt extends Entity {
         this.pos1 = pos1;
         this.pos2 = pos2;
     }
-    public void renderBeam(BlockPos pos1, Vec3 pos2, float width) {
+    public static void renderBeam(BlockPos pos1, Vec3 pos2, float width) {
         VertexConsumer consumer = RenderHandler.DELAYED_RENDER.getBuffer(TRAIL_TYPE);
         Matrix4f poseStack = new Matrix4f();
         VFXBuilders.createWorld()
@@ -35,7 +35,7 @@ public class MagicBolt extends Entity {
 
     @Override
     protected void defineSynchedData() {
-        // Define synchronized data if needed
+
     }
 
     @Override
