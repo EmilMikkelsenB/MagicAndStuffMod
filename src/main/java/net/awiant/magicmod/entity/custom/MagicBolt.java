@@ -35,6 +35,7 @@ public class MagicBolt extends Entity {
 
     @Override
     protected void defineSynchedData() {
+
     }
 
     @Override
